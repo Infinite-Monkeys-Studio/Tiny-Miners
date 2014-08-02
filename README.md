@@ -5,8 +5,8 @@ Tiny Miners
 ***By: Quinn Henckel***
 
 ##Play the game##
-1. Download Tiny_Miners_X-X.exe
-2. Run the .EXE
+1. Download Tiny_Miners that matches your OS.
+2. Start the game.
 3. Enjoy!
 
 ##Description##

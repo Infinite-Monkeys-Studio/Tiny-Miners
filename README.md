@@ -18,7 +18,11 @@ This game is written in [Processing](http://www.processing.org/ "A Java implemen
 ##Game Play##
 *Look at all the game play we don't have!*
 
-##Vision##
+##Dev List##
+[] This is not finished!
+[x] This is!
+
+##Dev's notes##
 ###Quinn's thoughts/notes:###
 I really enjoy sandbox building games and programming. What a more perfect way for them to come together.
 I expect this game to be hard for me to complete hopefully imposable.

@@ -19,8 +19,8 @@ This game is written in [Processing](http://www.processing.org/ "A Java implemen
 *Look at all the game play we don't have!*
 
 ##Dev List##
-[] This is not finished!
-[x] This is!
+- [] This is not finished!
+- [x] This is!
 
 ##Dev's notes##
 ###Quinn's thoughts/notes:###

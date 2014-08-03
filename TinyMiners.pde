@@ -12,9 +12,10 @@ void draw() {
   fill(255);
   text("Tiny Miners", width/2, 150);
   
-  shape(miner(), width/2, height/2);
+  PImage m = miner();
+  image(m, width/2 - m.width/2, height/2 - m.height/2);
 }
 
-PShape miner() {
-  return loadShape("miner.svg");
+PImage miner() {
+  return loadImage("miner.png");
 }

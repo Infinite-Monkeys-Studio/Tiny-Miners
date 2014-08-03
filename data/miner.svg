@@ -29,7 +29,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
      inkscape:cx="450.44682"
-     inkscape:cy="805.10829"
+     inkscape:cy="677.31909"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -61,13 +61,19 @@
        height="201.50035"
        x="260.59174"
        y="232.78061"
-       ry="62.629459" />
+       ry="62.629459"
+       inkscape:export-filename="C:\Users\Quinn\Documents\Processing\TinyMiners\data\path3868-0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        style="fill:#ffff00"
        d="m 138.68048,340.18896 -0.0789,-1.91666 0.60417,0.60416 0.60416,0.60417 -0.52522,1.3125 -0.52522,1.3125 -0.0789,-1.91667 z"
        id="path3776" />
     <g
-       id="g3857">
+       id="g3857"
+       inkscape:export-filename="C:\Users\Quinn\Documents\Processing\TinyMiners\data\path3868-0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          style="fill:#cccccc"
          id="g3825">
@@ -114,7 +120,10 @@
        style="fill:#552200;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 358.92857,330.57647 7.5,21.42857 -9.28571,0.35714 -1.07143,-3.92857 6.07143,1.07143 -5.35715,-15.71429 z"
        id="path3866"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Quinn\Documents\Processing\TinyMiners\data\path3868-0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        sodipodi:type="arc"
        style="fill:#552200;fill-opacity:1;stroke:none"
@@ -127,15 +136,23 @@
        sodipodi:start="0.92668037"
        sodipodi:end="4.7753647"
        transform="matrix(-0.930337,-0.36670569,0.36670569,-0.930337,585.5006,813.20414)"
-       inkscape:transform-center-x="-1.8598776" />
+       inkscape:transform-center-x="-1.8598776"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        style="fill:#b3b3b3;fill-rule:evenodd;stroke:none"
        d="m 260.66964,299.71429 0,73.625 c 0,34.69672 27.92828,62.625 62.625,62.625 l 76.25,0 c 34.69672,0 62.625,-27.92828 62.625,-62.625 l 0,-64.5 -26.8125,71.375 -38.9375,-9.28125 -60.71875,1.4375 -36.40625,11.78125 -38.625,-84.4375 z"
        id="rect2985-9"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Quinn\Documents\Processing\TinyMiners\data\path3868-0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <g
        id="g3798"
-       transform="matrix(0.30686182,0,0,0.30686182,105.48996,179.35257)">
+       transform="matrix(0.30686182,0,0,0.30686182,105.48996,179.35257)"
+       inkscape:export-filename="C:\Users\Quinn\Documents\Processing\TinyMiners\data\path3868-0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <path
          inkscape:connector-curvature="0"
          id="path3788"
@@ -175,12 +192,18 @@
        d="m 371.50078,354.75353 a 1.6071428,4.1071429 0 1 1 -0.86393,-7.3832 l -0.10114,4.099 z"
        sodipodi:start="0.92668037"
        sodipodi:end="4.7753647"
-       transform="matrix(0.90953422,-0.41562904,0.41562904,0.90953422,-132.41271,184.82125)" />
+       transform="matrix(0.90953422,-0.41562904,0.41562904,0.90953422,-132.41271,184.82125)"
+       inkscape:export-filename="C:\Users\Quinn\Documents\Processing\TinyMiners\data\path3868-0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        style="fill:#cccccc;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 349.28571,382.00504 26.78572,0 2.5,5.71428 -33.21429,-0.35714 z"
        id="path3890"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Quinn\Documents\Processing\TinyMiners\data\path3868-0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        sodipodi:type="arc"
        style="fill:#552200;fill-opacity:1;stroke:none"
@@ -193,6 +216,8 @@
        sodipodi:start="0.92668037"
        sodipodi:end="4.7753647"
        transform="matrix(-0.930337,-0.36670569,0.36670569,-0.930337,581.28891,883.08217)"
-       inkscape:transform-center-x="-1.8598776" />
+       inkscape:transform-center-x="-1.8598776"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>

@@ -3,7 +3,7 @@
 
 - [x] Get Drew on board 
 - [ ] Get main menu to work
-- [ ] Spell check [README.md]
+- [ ] Spell check [the readme](README.md)
 - [ ] Make graphics for development *Quinn*
   - [x] Hard hat (top down miner)
   - [ ] sample items

@@ -19,8 +19,11 @@ This game is written in [Processing](http://www.processing.org/ "A Java implemen
 *Look at all the game play we don't have!*
 
 ##Dev's notes##
-
+###Quinn's thoughts/notes:###
 I really enjoy sandbox building games and programming. What a more perfect way for them to come together.
 I expect this game to be hard for me to complete hopefully imposable.
 Using processing was a no-brainer a game like this has very little graphics demands and so why not make that the easiest part to write?
 Processing has a very simple way to load, display and animate 2D characters.
+
+###Drew's thoughts/notes:###
+*(He should add some =)*

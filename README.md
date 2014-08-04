@@ -18,12 +18,10 @@ This game is written in [Processing](http://www.processing.org/ "A Java implemen
 ##Game Play##
 *Look at all the game play we don't have!*
 
-##Dev's notes##
-###Quinn's thoughts/notes:###
-I really enjoy sandbox building games and programming. What a more perfect way for them to come together.
-I expect this game to be hard for me to complete hopefully imposable.
-Using processing was a no-brainer a game like this has very little graphics demands and so why not make that the easiest part to write?
-Processing has a very simple way to load, display and animate 2D characters.
+##Developer notes##
 
-###Drew's thoughts/notes:###
-*(He should add some =)*
+While reading through this description you may get the feeling that there is no point: "It's just another sandbox crafting survival game. What is the big deal?" But the intent for T-Miners is to create a game that is more, a game that would incorperate the lessons learned from all the others. We here at ***insert studio name*** believe that Tiny Miners will be a unique excperiance.
+
+"So what is your master plan to achieve such uniquness?" you ask. "We are working on that." we answere.
+
+Finding a "good" central game mechanic is not hard. The devil is in the exicution. But with good luck and a lot of brains we will succeed!

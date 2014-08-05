@@ -1,18 +1,21 @@
 private Menu start;
 boolean paused = true;
+PImage floorImg;
 
 void setup() {
   size(800, 600);
   Title title = new Title();
   start = title.getMenu();
+  floorImg = loadImage("floor.png");
 }
 
 void draw() {
-   background(#CBCBCB);
-  if(paused) {
+  background(#CBCBCB);
+  if(paused == true) {
     start.render();
   } else {
-    drawFloor(loadImage("floor.png"));
+  // print("called");
+    image(floorImg, 0, 0);
   }
 }
 
@@ -27,18 +30,5 @@ void mouseClicked() {
   
   if(clicked.getText().equalsIgnoreCase("Exit")) {
     exit();
-  }
-}
-
-public PVector mouse() {
-  //UNUSED
-  return new PVector(mouseX, mouseY);
-}
-
-void drawFloor(PImage im) {
-  for(int x = 0; x > width; x =+ 100) {
-    for(int y = 0; y > height; y =+ 100) {
-      image(im, x, y);
-    }
   }
 }

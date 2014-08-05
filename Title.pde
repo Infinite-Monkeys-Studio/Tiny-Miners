@@ -1,11 +1,11 @@
-Menu start;
+private Menu title;
 
 class Title {
   
   Title() {
     Button startButton = new Button("Start").setColor(#A58F8F).setLoc(new PVector(400, 400)).setSize(new PVector(200, 80));
     Button exitButton = new Button("Exit").setColor(#A58F8F).setLoc(new PVector(400, 490)).setSize(new PVector(200, 80));
-    start = new Menu("Start").addButton(startButton).addButton(exitButton);
+    title = new Menu("Start").addButton(startButton).addButton(exitButton);
   }
   
   public void render() {
@@ -27,6 +27,6 @@ class Title {
   }
   
   public Menu getMenu() {
-    return start;
+    return title;
   }
 }

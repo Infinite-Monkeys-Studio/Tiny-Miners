@@ -3,12 +3,12 @@ class Location {
   private PVector loc;
   private int depth;
     
-  Location(PVector l, int d) {
+  Location(PVector l, Integer d) {
     loc = l;
     if(d == null){
       depth = 0;
     } else {
-      depth = d
+      depth = d;
     }
   }
   

@@ -1,15 +1,15 @@
 class Button {
  
-  String text;
-  color col;
-  PVector loc;
-  PVector size;
+  private String text;
+  private color col;
+  private PVector loc;
+  private PVector size;
   
   Button(String t) {
     text = t;
   }
   
-  void render() {
+  public void render() {
     pushMatrix();
     fill(col);
     rect(loc.x - size.x/2, loc.y - size.y/2, size.x, size.y);
@@ -20,7 +20,7 @@ class Button {
     popMatrix();
   }
   
-  boolean mouseOver() {
+  public boolean mouseOver() {
     
     return 
       mouseX > loc.x - size.x/2 &&
@@ -30,34 +30,34 @@ class Button {
       
   }
   
-  Button setColor(color c) {
+  public Button setColor(color c) {
     col = c;
     return this;
   }
   
-  color getColor() {
+  public color getColor() {
     return col;
   }
   
-  Button setLoc(PVector l) {
+  public Button setLoc(PVector l) {
     loc = l;
     return this;
   }
   
-  PVector getLoc() {
+  public PVector getLoc() {
     return loc;
   }
   
-  Button setSize(PVector s) {
+  public Button setSize(PVector s) {
     size = s;
     return this;
   }
   
-  PVector getSize() {
+  public PVector getSize() {
     return size;
   }
   
-  String getText() {
+  public String getText() {
     return text;
   }
 }

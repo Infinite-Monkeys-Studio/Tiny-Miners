@@ -5,6 +5,16 @@ class Menu {
   
   Menu(String n) {
     name = n;
+    buttons = new ArrayList<Button>();
+  }
+  
+  public Button getClicked() {
+    for(Button b : buttons) {
+      if(b.mouseOver()) {
+        return b;
+      }
+    }
+    return null;
   }
   
   public Menu addButton(Button b) {
@@ -13,8 +23,8 @@ class Menu {
   }
   
   public void render() {
-    for(int i = 0; buttons.size() < i; i++) {
-      buttons.get(i).render();
+    for(Button b : buttons) {
+      b.render();
     }
   }
 }

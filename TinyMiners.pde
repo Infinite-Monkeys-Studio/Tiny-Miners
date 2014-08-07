@@ -10,12 +10,12 @@ void setup() {
 }
 
 void draw() {
-  background(#CBCBCB);
   if(paused == true) {
+    background(#CBCBCB);
     start.render();
   } else {
-  // print("called");
-    image(floorImg, 0, 0);
+    background(#2A394B);
+    
   }
 }
 
@@ -23,12 +23,14 @@ void mouseClicked() {
   Button clicked = start.getClicked();
   if(clicked == null) {return;}
   
-  if(clicked.getText().equalsIgnoreCase("Start")) {
-    print("Start!");
-    paused = false;
-  }
-  
-  if(clicked.getText().equalsIgnoreCase("Exit")) {
-    exit();
+  if(paused){
+    if(clicked.getText().equalsIgnoreCase("Start")) {
+      print("Start!");
+      paused = false;
+    }
+    
+    if(clicked.getText().equalsIgnoreCase("Exit")) {
+      exit();
+    }
   }
 }

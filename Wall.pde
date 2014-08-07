@@ -11,14 +11,16 @@ class Wall extends VoxelThing{
   }
   
   public void render() {
-    PImage img = loadImage(mat.getImage());
-    image(img, loc.getX(), loc.getY());
+    pushMatrix();
+    fill(mat.getColor());
+    rect(loc.getX(), loc.getY(), 100, 100);
+    popMatrix();
     return;
   }
   
   public Wall setDamage(float d) {
     damage = d;
-    return this; 
+    return this;
   }
   
   public Material getMaterial() {

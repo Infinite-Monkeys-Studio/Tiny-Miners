@@ -3,15 +3,16 @@ PImage wall;
 PImage floor;
 PImage player;
 PVector pLoc;
+ArrayList<Character> keys = new ArrayList<Character>();
 
 void setup() {
   size(1000, 1000);
-  pLoc = new PVector(350, 650, 0);
+  pLoc = new PVector(350, 650, 1);
   wall = loadImage("wall.png");
   floor = loadImage("floor.png");
   player = loadImage("miner.png");
   player.resize(50, 0);
-  load();
+  loadMap();
 }
 
 void draw() {
@@ -33,35 +34,51 @@ void mouseClicked() {
   walls[x][y] = !walls[x][y];
 }
 
-void physics() {
-  
+void physics() {}
+
+void keyTyped() {
+  if(key == 'p') {
+    saveMap();
+  }
+}
+
+void keyPressed() {
+  if(!keys.contains(key)) {
+    keys.add(key);
+  }
+}
+
+void keyReleased() {
+  if(keys.contains(key)) {
+    keys.remove(keys.indexOf(key));
+  }
 }
 
 void control() {
-  if(keyPressed) {
-    if(key == 'w') {
+  ArrayList<Character> temp = keys;
+  for(char i : temp) {
+    if(i == 'w') {
       pLoc.y--;
     }
     
-    if(key == 's') {
+    if(i == 's') {
       pLoc.y++;
     }
     
-    if(key == 'a') {
+    if(i == 'a') {
       pLoc.x--;
     }
     
-    if(key == 'd') {
+    if(i == 'd') {
       pLoc.x++;
     }
   }
 }
 
 void player() {
-  //print("player called");
   pushMatrix();
   translate(pLoc.x, pLoc.y);
- // rotate(PI/pLoc.z);
+  rotate(PI/pLoc.z);
   image(player, 0, 0);
   noFill();
   stroke(255,0,0);
@@ -89,7 +106,32 @@ void walls() {
   }
 }
 
-void load() {
+void saveMap() {
+  PrintWriter output = createWriter("new_world.txt");
+  String line = "";
+  println("saving map!");
+  for(int y = 0; y < walls.length; y++) {
+    for(int x = 0; x < walls.length; x++) {
+      if(walls[x][y]){
+        line = line + "1";
+      } else {
+        line = line + "0";
+      }
+      
+      if(x != 9) {
+        line = line + ",";
+      }
+    }
+    println(line);
+    output.println(line);
+    line = "";
+  }
+  output.flush();
+  output.close();
+  println("saved!");
+}
+
+void loadMap() {
   BufferedReader reader = createReader("world.txt");
   String line = null;
   int y = 0;
@@ -107,7 +149,6 @@ void load() {
     } else {
       String[] pieces = split(line, ',');
       for(int x = 0; x < pieces.length; x++) {
-        print(pieces[x]);
         if(Integer.valueOf(pieces[x]) == 1) {
           walls[x][y] = true;
         } else {

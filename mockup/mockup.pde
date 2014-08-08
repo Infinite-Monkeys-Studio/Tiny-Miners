@@ -4,6 +4,9 @@ PImage floor;
 PImage player;
 PVector pLoc;
 ArrayList<Character> keys = new ArrayList<Character>();
+boolean collide = false;
+float speed = 2;
+
 
 void setup() {
   size(1000, 1000);
@@ -11,7 +14,7 @@ void setup() {
   wall = loadImage("wall.png");
   floor = loadImage("floor.png");
   player = loadImage("miner.png");
-  player.resize(50, 0);
+  player.resize(70, 0);
   loadMap();
 }
 
@@ -20,21 +23,15 @@ void draw() {
   walls();
   pointer();
   control();
+  player();
   physics();
-  player(); 
 }
+
 /*
 go through both x and y
 then take the location add the players location to it
 then render the ones on the screen
 */
-void mouseClicked() {
-  int x = floor(mouseX / 100);
-  int y = floor(mouseY / 100);
-  walls[x][y] = !walls[x][y];
-}
-
-void physics() {}
 
 void keyTyped() {
   if(key == 'p') {
@@ -58,19 +55,19 @@ void control() {
   ArrayList<Character> temp = keys;
   for(char i : temp) {
     if(i == 'w') {
-      pLoc.y--;
+      pLoc.y -= speed;
     }
     
     if(i == 's') {
-      pLoc.y++;
+      pLoc.y += speed;
     }
     
     if(i == 'a') {
-      pLoc.x--;
+      pLoc.x -= speed;
     }
     
     if(i == 'd') {
-      pLoc.x++;
+      pLoc.x += speed;
     }
   }
 }
@@ -79,18 +76,66 @@ void player() {
   pushMatrix();
   translate(pLoc.x, pLoc.y);
   rotate(PI/pLoc.z);
-  image(player, 0, 0);
+  image(player, -player.width/2, -player.height/2);
   noFill();
-  stroke(255,0,0);
-  ellipse(25, 25, 55, 55);
+  if(collide){
+    stroke(255,0,0);
+  } else {
+    stroke(0,255,0);
+  }
+  ellipse(0, 0, 75, 75);
   popMatrix();
+}
+
+void physics() {
+  PVector rot = new PVector(0, -37.5);
+  int boom = 0;
+  int iter = 20;
+  PVector bounce = new PVector(0,0);
+  for(int r = 0; r < iter; r++){
+    PVector test = PVector.add(rot, pLoc);
+    int[] sq = getRect(test);
+    fill(0);
+    ellipse(test.x, test.y, 2, 2);
+    if(walls[sq[0]][sq[1]]){
+      PVector face = rot.get();
+      face.rotate(PI);
+      face.setMag(speed);
+      bounce.add(face);
+      boom++;
+    }
+    rot.rotate(PI * 2 /iter);
+  }
+  
+  if(boom == 0){
+    collide = false;
+  } else {
+    pLoc.add(bounce);
+    collide = true;
+  }
+}
+
+int[] getRect(PVector loc) {
+  int x = floor(loc.x / 100);
+  int y = floor(loc.y / 100);
+  return new int[] {x, y};
+}
+
+PVector mouseLoc() {
+ return new PVector(mouseX, mouseY);
+}
+
+void mousePressed() {
+  int[] loc = getRect(mouseLoc());
+  walls[loc[0]][loc[1]] = !walls[loc[0]][loc[1]];
 }
 
 void pointer() {
   noFill();
   stroke(255,0,0);
-  int mx = floor(mouseX / 100) * 100;
-  int my = floor(mouseY / 100) * 100;
+  int[] loc = getRect(mouseLoc());
+  int mx = loc[0] * 100;
+  int my = loc[1] * 100;
   rect(mx, my, 100, 100);
 }
 
@@ -107,7 +152,7 @@ void walls() {
 }
 
 void saveMap() {
-  PrintWriter output = createWriter("new_world.txt");
+  PrintWriter output = createWriter("data/world.txt");
   String line = "";
   println("saving map!");
   for(int y = 0; y < walls.length; y++) {
@@ -126,7 +171,6 @@ void saveMap() {
     output.println(line);
     line = "";
   }
-  output.flush();
   output.close();
   println("saved!");
 }
@@ -145,7 +189,7 @@ void loadMap() {
     }
     
     if (line == null) {
-      return; 
+      break; 
     } else {
       String[] pieces = split(line, ',');
       for(int x = 0; x < pieces.length; x++) {
@@ -157,5 +201,10 @@ void loadMap() {
       }   
       y++;
     }
+  }
+  try {
+    reader.close();
+  } catch (IOException e){
+    e.printStackTrace();
   }
 }

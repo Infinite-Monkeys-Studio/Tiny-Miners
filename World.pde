@@ -16,7 +16,7 @@ class World {
   }
   
   public void loadWorld() {
-  BufferedReader reader = createReader(name + "wor");
+  BufferedReader reader = createReader(name + ".wor");
   String line = null;
   int y = 0;
   
@@ -36,6 +36,7 @@ class World {
         int id = Integer.valueOf(pieces[x]);
         println(x + ", " + y  + " : " + id);
         Material material = Material.getMaterial(id);
+        structures[x][y] = new Structure(new Location(new PVector(x * 50, y * 50), 0), material);
         structures[x][y].setMaterial(material);
       }   
       y++;

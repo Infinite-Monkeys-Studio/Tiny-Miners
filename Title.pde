@@ -23,7 +23,7 @@ class Title {
     m.resize(0, 200);
     image(m, 400 - m.width/2, 250 - m.height/2);
   
-    start.render();
+    title.render();
   }
   
   public Menu getMenu() {

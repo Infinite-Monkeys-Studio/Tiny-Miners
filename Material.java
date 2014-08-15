@@ -3,20 +3,20 @@ import processing.*;
 enum Material {
   
   //Base Damage, image name
-  STONE   (50,  "stone"),
-  GRAVEL  (10,  "gravel"),
-  PEBBLES (20,  "pebbles"),
-  SAND    (2,   "sand"),
-  GRANITE  (100, "granite");
+  STONE   (1, 50,  "stone"),
+  GRAVEL  (2, 10,  "gravel"),
+  PEBBLES (3, 20,  "pebbles"),
+  SAND    (4, 2,   "sand"),
+  GRANITE (5, 100, "granite");
   
   private final Float baseDamage;
   private final String imgName;
-  private final String color;
+  private final int itemID;
   
-  Material(float d, String n) {
+  private Material(int i, float d, String n) {
+    itemID = i;
     baseDamage = d;
     imgName = n;
-    color = c;
   }
   
   public String getImageName() {
@@ -25,5 +25,9 @@ enum Material {
   
   public float getDamage() {
     return baseDamage;
+  }
+  
+  public int getItemID() {
+    return itemID;
   }
 }

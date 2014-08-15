@@ -1,36 +1,60 @@
 class World {
   String name;
-  Wall[] walls;
+  Wall[][] walls;
   
   World(String n) {
     name = n;
+    walls = new Wall[20][20];
   }
+   
+  public void loadWorld() {
+  BufferedReader reader = createReader(name);
+  String line = null;
+  int y = 0;
   
-  public World load(String name) {
-    BufferedReader reader = createReader(name + ".wor");
-    String line;
-    boolean stop = false;
+  while(true){
+    try {
+      line = reader.readLine();
+    } catch (IOException e){
+      e.printStackTrace();
+      line = null;
+    }
     
-    while(stop) {
-      try {
-        line = reader.readLine();
-      } catch (IOException e){
-        e.printStackTrace();
-        stop = true;
-      }
-      
-      if (stop) {
-        return newWorld(); 
-      } else {
-        String[] pieces = split(line, TAB);
-        int x = int(pieces[0]);
-        int y = int(pieces[1]);
-        point(x, y);
-      }
+    if (line == null) {
+      break; 
+    } else {
+      String[] pieces = split(line, ',');
+      for(int x = 0; x < pieces.length; x++) {
+        walls[x][y] = Integer.valueOf(pieces[x]);
+      }   
+      y++;
     }
   }
   
-  public World newWorld() {
-    
+  try {
+    reader.close();
+  } catch (IOException e){
+    e.printStackTrace();
+  }
+}
+  
+  public void saveWorld() {
+    PrintWriter output = createWriter("data/world.txt");
+    String line = "";
+    println("saving map!");
+    for(int y = 0; y < walls.length; y++) {
+      for(int x = 0; x < walls.length; x++) {
+        line = line + walls[x][y].getMaterial().getItemID();
+        
+        if(x != walls.length) {
+          line = line + ",";
+        }
+      }
+      println(line);
+      output.println(line);
+      line = "";
+    }
+    output.close();
+    println("saved!");
   }
 }

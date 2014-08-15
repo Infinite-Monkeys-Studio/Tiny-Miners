@@ -1,12 +1,12 @@
-private Location loc;
+//private Location loc;
 private float damage;
 private Material mat;
 private PImage img;
 
 class Wall extends VoxelThing{
   
-  Wall(Location l, Material m) {
-    loc = l;
+  Wall(Material m) {
+    //loc = l;
     mat = m;
     damage = m.getDamage();
     img = loadImage(mat.getImageName());

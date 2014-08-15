@@ -10,7 +10,7 @@
 ##Controls:##
 - WASD: Movement
 - P: Save the map
-- Mouse: Click to toggle the walls
+- Mouse: Click to cycle through available wall types
 
 ##Game Play:##
 Run around and see that you can bump into the walls.

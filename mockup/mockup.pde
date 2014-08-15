@@ -39,9 +39,6 @@ void keyTyped() {
   if(key == 'p') {
     saveMap();
   }
-  if(key == 'g') {
-    //make the mouseblock a goblin
-  }
 }
 
 void keyPressed() {
@@ -132,9 +129,8 @@ PVector mouseLoc() {
 
 void mousePressed() {
   int[] loc = getRect(mouseLoc());
-  if(walls[loc[0]][loc[1]] == 0) {
-    walls[loc[0]][loc[1]] = 1;
-  } else if(walls[loc[0]][loc[1]] == 1) {
+  walls[loc[0]][loc[1]]++;
+  if(walls[loc[0]][loc[1]] > 2) {
     walls[loc[0]][loc[1]] = 0;
   }
 }

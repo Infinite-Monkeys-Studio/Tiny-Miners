@@ -5,11 +5,12 @@ class Location {
     
   Location(PVector l, Integer d) {
     loc = l;
-    if(d == null){
-      depth = 0;
-    } else {
-      depth = d;
-    }
+    depth = d;
+  }
+  
+   Location(PVector l) {
+    loc = l;
+    depth = 0;
   }
   
   public Location setLocation(PVector l) {

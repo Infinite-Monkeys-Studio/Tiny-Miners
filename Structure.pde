@@ -6,11 +6,13 @@ class Structure {
   Structure(Location l, Material m){
     loc = l;
     mat = m;
-    //img = ;
+    img = TinyMiners.texture.getTexture(mat.getImageName());
   }
   
   public void render() {
-    image(TinyMiners.texture.getTexture(mat.getImageName()), loc.getX(), loc.getY());
+    float x = loc.getX();
+    float y = loc.getY();
+    image(img, x, y);
     return;
   }
    

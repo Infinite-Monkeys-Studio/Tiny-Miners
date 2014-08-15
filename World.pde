@@ -34,9 +34,12 @@ class World {
       String[] pieces = split(line, ',');
       for(int x = 0; x < pieces.length; x++) {
         int id = Integer.valueOf(pieces[x]);
-        println(x + ", " + y  + " : " + id);
+        println(x + ", " + y + " : " + id);
         Material material = Material.getMaterial(id);
-        structures[x][y] = new Structure(new Location(new PVector(x * 50, y * 50), 0), material);
+        PVector pvec = new PVector(x, y);
+        Location loc = new Location(pvec);
+        loc.setLocation(pvec);
+        structures[x][y] = new Structure(loc, material);
         structures[x][y].setMaterial(material);
       }   
       y++;

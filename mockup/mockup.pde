@@ -1,6 +1,7 @@
-boolean[][] walls = new boolean[10][10];
+int[][] walls = new int[10][10];
 PImage wall;
 PImage floor;
+PImage goblinWall;
 PImage player;
 PVector pLoc;
 ArrayList<Character> keys = new ArrayList<Character>();
@@ -12,6 +13,7 @@ void setup() {
   size(1000, 1000);
   pLoc = new PVector(350, 650, 1);
   wall = loadImage("wall.png");
+  goblinWall = loadImage("goblin_wall.png");
   floor = loadImage("floor.png");
   player = loadImage("miner.png");
   player.resize(70, 0);
@@ -36,6 +38,9 @@ then render the ones on the screen
 void keyTyped() {
   if(key == 'p') {
     saveMap();
+  }
+  if(key == 'g') {
+    //make the mouseblock a goblin
   }
 }
 
@@ -97,7 +102,7 @@ void physics() {
     int[] sq = getRect(test);
     fill(0);
     ellipse(test.x, test.y, 2, 2);
-    if(walls[sq[0]][sq[1]]){
+    if(walls[sq[0]][sq[1]] != 0){
       PVector face = rot.get();
       face.rotate(PI);
       face.setMag(speed);
@@ -127,7 +132,11 @@ PVector mouseLoc() {
 
 void mousePressed() {
   int[] loc = getRect(mouseLoc());
-  walls[loc[0]][loc[1]] = !walls[loc[0]][loc[1]];
+  if(walls[loc[0]][loc[1]] == 0) {
+    walls[loc[0]][loc[1]] = 1;
+  } else if(walls[loc[0]][loc[1]] == 1) {
+    walls[loc[0]][loc[1]] = 0;
+  }
 }
 
 void pointer() {
@@ -142,10 +151,15 @@ void pointer() {
 void walls() {
   for(int x = 0; x < walls.length; x++) {
     for(int y = 0; y < walls.length; y++) {
-      if(walls[x][y]){
-        image(wall, x*100, y*100);
-      } else {
+      if(walls[x][y] == 0){
         image(floor, x*100, y*100);
+      } 
+      if(walls[x][y] == 1) {
+        image(wall, x*100, y*100);
+      }
+      
+      if(walls[x][y] == 2) {
+        image(goblinWall, x*100, y*100);
       }
     }
   }
@@ -157,11 +171,7 @@ void saveMap() {
   println("saving map!");
   for(int y = 0; y < walls.length; y++) {
     for(int x = 0; x < walls.length; x++) {
-      if(walls[x][y]){
-        line = line + "1";
-      } else {
-        line = line + "0";
-      }
+      line = line + walls[x][y];
       
       if(x != 9) {
         line = line + ",";
@@ -193,11 +203,7 @@ void loadMap() {
     } else {
       String[] pieces = split(line, ',');
       for(int x = 0; x < pieces.length; x++) {
-        if(Integer.valueOf(pieces[x]) == 1) {
-          walls[x][y] = true;
-        } else {
-          walls[x][y] = false;
-        }
+        walls[x][y] = Integer.valueOf(pieces[x]);
       }   
       y++;
     }

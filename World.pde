@@ -1,9 +1,9 @@
 class World {
+  String name;
+  Wall[] walls;
   
-  
-  
-  World() {
-    
+  World(String n) {
+    name = n;
   }
   
   public World load(String name) {

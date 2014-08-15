@@ -1,36 +1,14 @@
-private Menu start;
-boolean paused = true;
-PImage floorImg;
+World world; //TODO move this from being a field
 
 void setup() {
   size(800, 600);
-  Title title = new Title();
-  start = title.getMenu();
-  floorImg = loadImage("floor.png");
+  world = new World("first");
 }
 
 void draw() {
-  if(paused == true) {
-    background(#CBCBCB);
-    start.render();
-  } else {
-    background(#2A394B);
-    
-  }
+  
 }
 
 void mouseClicked() {
-  Button clicked = start.getClicked();
-  if(clicked == null) {return;}
-  
-  if(paused){
-    if(clicked.getText().equalsIgnoreCase("Start")) {
-      print("Start!");
-      paused = false;
-    }
-    
-    if(clicked.getText().equalsIgnoreCase("Exit")) {
-      exit();
-    }
-  }
+
 }

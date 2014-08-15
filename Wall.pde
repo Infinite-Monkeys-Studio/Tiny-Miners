@@ -1,6 +1,7 @@
 private Location loc;
 private float damage;
 private Material mat;
+private PImage img;
 
 class Wall extends VoxelThing{
   
@@ -8,13 +9,11 @@ class Wall extends VoxelThing{
     loc = l;
     mat = m;
     damage = m.getDamage();
+    img = loadImage(mat.getImageName());
   }
   
   public void render() {
-    pushMatrix();
-    fill(mat.getColor());
-    rect(loc.getX(), loc.getY(), 100, 100);
-    popMatrix();
+    image(img, loc.x, loc.y);
     return;
   }
   

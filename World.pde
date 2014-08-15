@@ -6,9 +6,17 @@ class World {
     name = n;
     structures = new Structure[20][20];
   }
-   
+  
+  public void render() {
+    for(int x = 0; x < structures.length; x++) {
+      for(int y = 0; y < structures.length; y++) {
+        structures[x][y].render();
+      }
+    }
+  }
+  
   public void loadWorld() {
-  BufferedReader reader = createReader(name);
+  BufferedReader reader = createReader(name + "wor");
   String line = null;
   int y = 0;
   
@@ -25,7 +33,10 @@ class World {
     } else {
       String[] pieces = split(line, ',');
       for(int x = 0; x < pieces.length; x++) {
-        structures[x][y].setMaterial(Material.getMaterial(Integer.valueOf(pieces[x])));
+        int id = Integer.valueOf(pieces[x]);
+        println(x + ", " + y  + " : " + id);
+        Material material = Material.getMaterial(id);
+        structures[x][y].setMaterial(material);
       }   
       y++;
     }

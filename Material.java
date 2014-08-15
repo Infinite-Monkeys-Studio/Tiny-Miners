@@ -11,10 +11,11 @@ enum Material {
   
   private final Float baseDamage;
   private final String imgName;
-  private final int itemID;
+  private final int id;
+  private static Material[] byId = new Material[values().length];
   
   private Material(int i, float d, String n) {
-    itemID = i;
+    id = i;
     baseDamage = d;
     imgName = n;
   }
@@ -28,6 +29,18 @@ enum Material {
   }
   
   public int getItemID() {
-    return itemID;
+    return id;
+  }
+  
+  static {
+    for(Material material : values()) {
+      if(byId.length > material.id) {
+        byId[material.id] = material;
+      }
+    }
+  }
+  
+  public static Material getMaterial(int id) {
+    return byId[id];
   }
 }

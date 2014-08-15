@@ -1,11 +1,11 @@
-class VoxelThing {
-  
-  private Location loc;
-  
-  public VoxelThing(Location l) {
-    loc = l;
-    inti();
-  }
-  
-  public abstract void inti();
-}
+//abstract class VoxelThing {
+//  
+//  public Location loc;
+//  
+//  public VoxelThing(Location l) {
+//    loc = l;
+//    inti();
+//  }
+//  
+//  public abstract void inti();
+//}

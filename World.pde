@@ -1,10 +1,10 @@
 class World {
   String name;
-  Wall[][] walls;
+  Structure[][] structures;
   
   World(String n) {
     name = n;
-    walls = new Wall[20][20];
+    structures = new Structure[20][20];
   }
    
   public void loadWorld() {
@@ -25,7 +25,7 @@ class World {
     } else {
       String[] pieces = split(line, ',');
       for(int x = 0; x < pieces.length; x++) {
-        walls[x][y] = Integer.valueOf(pieces[x]);
+        structures[x][y].setMaterial(Material.getMaterial(Integer.valueOf(pieces[x])));
       }   
       y++;
     }
@@ -42,11 +42,11 @@ class World {
     PrintWriter output = createWriter("data/world.txt");
     String line = "";
     println("saving map!");
-    for(int y = 0; y < walls.length; y++) {
-      for(int x = 0; x < walls.length; x++) {
-        line = line + walls[x][y].getMaterial().getItemID();
+    for(int y = 0; y < structures.length; y++) {
+      for(int x = 0; x < structures.length; x++) {
+        line = line + structures[x][y].getMaterial().getItemID();
         
-        if(x != walls.length) {
+        if(x != structures.length) {
           line = line + ",";
         }
       }

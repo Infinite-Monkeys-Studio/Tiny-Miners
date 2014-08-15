@@ -22,6 +22,6 @@ This game is written in [Processing](http://www.processing.org/ "A Java implemen
 
 While reading through this description you may get the feeling that there is no point: "It's just another sandbox crafting survival game. What is the big deal?" But the intent for T-Miners is to create a game that is more, a game that would incorperate the lessons learned from all the others. We here at ***insert studio name*** believe that Tiny Miners will be a unique excperiance.
 
-"So what is your master plan to achieve such uniquness?" you ask. "We are working on that." we answere.
+"So what is your master plan to achieve such uniqueness?" you ask. "We are working on that." we answer.
 
-Finding a "good" central game mechanic is not hard. The devil is in the exicution. But with good luck and a lot of brains we will succeed!
+Finding a "good" central game mechanic is not hard. The devil is in the execution. But with good luck and a lot of brains we will succeed!

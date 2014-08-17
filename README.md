@@ -2,7 +2,7 @@ Tiny Miners
 ========
 *An original mine exploration adventure game*
 
-***By: Quinn Henckel & Drew Jones***
+***By: Infinite Monkeys***
 
 ##Description##
 In the world of Tiny Miners you are a trapped miner all you know is how to mine and that you want to get out.

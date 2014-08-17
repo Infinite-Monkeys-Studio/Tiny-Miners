@@ -36,11 +36,12 @@ class World {
         int id = Integer.valueOf(pieces[x]);
         println(x + ", " + y + " : " + id);
         Material material = Material.getMaterial(id);
-        PVector pvec = new PVector(x, y);
+        PVector pvec = new PVector(x * 100, y *100);
         Location loc = new Location(pvec);
         loc.setLocation(pvec);
         structures[x][y] = new Structure(loc, material);
-        structures[x][y].setMaterial(material);
+        //structures[x][y].setMaterial(material);
+        structures[x][y].location = pvec;
       }   
       y++;
     }

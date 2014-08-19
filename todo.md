@@ -22,6 +22,17 @@
   <dt>Multi Player?</dt>
   <dd><em>Put answer here</em></dd>
 
+  <dt>Campaign? or Sandbox?</dt>
+  <dd>
+  <em>Put answer here</em>
+  <ul>Pros:
+    <li>
+  </ul>
+  <ul>Cons:
+    <li>
+  </ul>
+  </dd>
+  
   <dt>Q?</dt>
-  <dd><em>A</em></dd>
+  <dd><em>Put answer here</em></dd>
 </dl>

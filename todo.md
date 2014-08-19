@@ -13,7 +13,7 @@
 - [ ] Add to wiki
   - [ ] Goblins
   - [ ] player
-  - [ ] 
+  - [ ] blocks
 - [ ] Fix rendering problem
 - [ ] Decide on scale
 

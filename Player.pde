@@ -1,7 +1,9 @@
-class Player extends MovingThing{
+class Player extends Entity{
   
+  private String name;
+    
   Player() {
     super();
-    //Ghost class
+    name = "Joe";
   }
 }

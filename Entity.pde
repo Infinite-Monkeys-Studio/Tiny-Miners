@@ -1,12 +1,25 @@
-class MovingThing {
+class Entity {
   
-  private Location loc;
+  public Location loc;
+  public Inventory pockets;
   
-  MovingThing() {
-    //Ghost class
+  Entity() {
+    
   }
   
   public Location getLocation() {
     return loc;
+  }
+  
+  public void setLocation(Location l) {
+    loc = l;
+  }
+  
+  public Inventory getInventory() {
+    return pockets;
+  }
+  
+  public void setInventory(Inventory i) {
+    pockets = i;
   }
 }

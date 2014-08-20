@@ -1,7 +1,6 @@
 class Entity {
   
   public Location loc;
-  public Inventory pockets;
   
   Entity() {
     
@@ -13,13 +12,5 @@ class Entity {
   
   public void setLocation(Location l) {
     loc = l;
-  }
-  
-  public Inventory getInventory() {
-    return pockets;
-  }
-  
-  public void setInventory(Inventory i) {
-    pockets = i;
   }
 }
